@@ -6,7 +6,7 @@ const Header = () => {
     <div className='flex flex-col md:flex-row bg-primary rounded-lg px-6 md:px-10 lg:px-20'>
         {/* left side...... */}
         <div >
-            <p className='text-3xl md:text-4xl m-auto text-white m-auto mt-2'>Book Appoinment <br />With Trusted Doctors</p>
+            <p className='text-3xl md:text-4xl m-auto text-white m-auto mt-6'>Book Appoinment <br />With Trusted Doctors</p>
             <div className='flex flex-col md:flex-row item-center gap-3 text-white font-light text-sm  mt-4 md:mt-8'>
                 <img className='w-32' src={assets.group_profiles} alt="" />
                 <p>Simply browse through our extensive list of trusted Doctors,I <br /> schedule your appoinment hassel-free.</p>
