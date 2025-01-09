@@ -2,10 +2,11 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { AppContext } from '../context/AppContext'
 import { assets } from '../assets/assets'
+import RelatedDoctors from '../components/RelatedDoctors'
 
 const Appoinment = () => {
   const {docId} = useParams()
-  const {doctors} = useContext(AppContext)
+  const {doctors ,currencsymbol} = useContext(AppContext)
   const [docInfo , setdocInfo] = useState(null)
 
   const fetchDocInfo = async() => {
@@ -37,11 +38,14 @@ const Appoinment = () => {
             About <img src={assets.info_icon}/>  </p>
             <p>{docInfo.about}</p>
          </div>
-         <p> Appoinment fee: <span>{docInfo.fees}</span></p>
+         <p className='text-gray-500 font-medium mt-4'> 
+          Appoinment fee: <span className='text-gray-500'>{currencsymbol}{docInfo.fees}</span></p>
 
            </div>
 </div>
-    </div>
+{/* ---Related doctors----- */}
+<RelatedDoctors docId={docId} speciality={docInfo.speciality} />
+</div>
   )
 }
 
